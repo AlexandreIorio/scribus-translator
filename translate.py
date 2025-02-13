@@ -213,20 +213,20 @@ def main():
         exit(0)
 
     # Verify language codes
-    if args.targetlanguage:
-        if not translator.is_supported_language(args.targetlanguage, 'target'):
-            print(f"Target language code not supported: {args.targetlanguage}")
+    if args.target:
+        if not translator.is_supported_language(args.target, 'target'):
+            print(f"Target language code not supported: {args.target}")
             exit(1)
-        translator.target_language = args.targetlanguage
+        translator.target_language = args.target
     else:
         print("Please provide target language code using -t or --targetlanguage argument")
         exit(1)
 
-    if args.sourcelanguage:
-        if not translator.is_supported_language(args.sourcelanguage, 'source'):
-            print(f"Source language code not supported: {args.sourcelanguage}")
+    if args.source:
+        if not translator.is_supported_language(args.source, 'source'):
+            print(f"Source language code not supported: {args.source}")
             exit(1)
-        translator.source_language = args.sourcelanguage    
+        translator.source_language = args.source    
     
     # Verify input file
     if args.file is None:
@@ -255,7 +255,7 @@ def main():
 
     if not args.output:
         file_name = input_file.rsplit('.', 1)
-        output_file = f"{file_name[-2]}_translated_to_{args.targetlanguage}.{file_name[-1]}"
+        output_file = f"{file_name[-2]}_translated_to_{args.target}.{file_name[-1]}"
     else:
         output_file = args.output
     
