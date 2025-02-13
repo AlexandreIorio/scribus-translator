@@ -27,7 +27,7 @@ export DEEPL_API_KEY=your_api_key
 
 ```bash
 
-python translator.py -i exemple.sla -o exemple_translated.sla
+python translator.py -i example.sla -o exemple_translated.sla
 ```
 
 #### Options
